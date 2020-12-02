@@ -6,7 +6,7 @@
   tasks:
     - name: Created loopback shell
       with_items: "{{local_loopback}}"
-      nxos_interface:
+      cisco.nxos.nxos_interface:
        name: "{{item.name}}"
        mode: layer3
        description: "{{item.desc}}"
@@ -15,7 +15,7 @@
 
     - name: Set the new loopback
       with_items: "{{local_loopback}}"
-      nxos_l3_interface:
+      cisco.nxos.nxos_l3_interface:
        state: present
        name: "{{item.name}}"
        ipv4: "{{item.ip_address}}/{{item.prefix}}"
