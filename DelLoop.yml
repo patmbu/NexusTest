@@ -1,7 +1,6 @@
 ---
 
 - name: delete the 1 Loopback on equipement
-  hosts: nexus9k
   connection: ansible.netcommon.network_cli
   tasks:
     - name: delete loopback shell
