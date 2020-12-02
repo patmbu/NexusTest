@@ -1,7 +1,7 @@
 ---
 
 - name: Create 2 Loopback on equipement
-  hosts: nexus9k
+  hosts: all
   connection: ansible.netcommon.network_cli
   tasks:
     - name: Created loopback shell
