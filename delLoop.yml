@@ -1,0 +1,11 @@
+---
+
+- name: delete the 2 Loopback on equipement
+  hosts: nexus9k
+  connection: ansible.netcommon.network_cli
+  tasks:
+    - name: delete loopback shell
+      with_items: "{{local_loopback}}"
+      cisco.nxos.nxos_interface:
+        name: "{{item.name}}"
+        state: absent
